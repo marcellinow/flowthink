@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  height: 200vh;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #72bf78;
+}
+.logo-restart {
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.logo-restart object {
+  margin-right: 5px;
+}
+nav .logo {
+  color: #fff;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+nav .nav-links {
+  list-style: none;
+}
+nav .nav-links li {
+  display: inline;
+  margin: 0 15px;
+}
+nav .nav-links li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Middle */
+.middle {
+  background: url("assets/img/logo.svg") no-repeat center;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: red;
+}
+.middle .middle-title {
+  margin: 10px 0;
+  text-align: center;
+  padding-top: 150px;
+}
+
+.middle .middle-title .middle-title-font {
+  color: #002b5b;
+  font-size: 65px;
+  font-weight: bold;
+}
+
+.middle .sub-header-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 500px;
+  margin-top: 95px;
+}
+
+.middle .sub-header-title .sub-header-title-font {
+  font-size: 55px;
+  font-weight: bold;
+  color: #d3ee98;
+}
