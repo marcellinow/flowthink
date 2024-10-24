@@ -4,12 +4,41 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: "Futura";
+  src: url("assets/font/Futur.ttf");
+}
+@font-face {
+  font-family: "DM Sans";
+  src: url("assets/font/DMSans_18pt-Medium.ttf");
+}
+
+@font-face {
+  font-family: "SourceCode";
+  src: url("assets/font/SourceCodePro-Regular.ttf");
+}
+@font-face {
+  font-family: "SourceCodeBold";
+  src: url("assets/font/SourceCodePro-Bold.ttf");
+}
+
+h1 {
+  font-family: "DM Sans";
+}
+h2 {
+  font-family: "DM Sans";
+}
+
 body {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   line-height: 1.6;
-  background-color: #f4f4f4;
-  height: 200vh;
+  background-color: #fdfed4;
+  height: 240vh;
+  justify-content: center;
+  align-items: center;
+  background-image: url("assets/img/Background.svg");
+}
+.p-middle {
+  font-size: 35px;
 }
 
 /* Navigation */
@@ -26,13 +55,12 @@ nav {
   display: flex;
   align-items: center;
 }
-.logo-restart object {
-  margin-right: 5px;
-}
+
 nav .logo {
-  color: #fff;
-  font-size: 25px;
-  font-weight: bold;
+  color: #ffffff;
+  font-size: 28px;
+
+  font-family: "futura";
 }
 
 nav .nav-links {
@@ -45,42 +73,153 @@ nav .nav-links li {
 nav .nav-links li a {
   text-decoration: none;
   color: #fff;
+  font-size: 20px;
+  font-family: "DM Sans";
 }
 
 /* Middle */
+
 .middle {
-  background: url("assets/img/logo.svg") no-repeat center;
-  height: 600px;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  width: 500px;
+  margin: auto;
+  /* background-color: rgb(47, 255, 0); */
+}
+
+.middle div .sub-header-font {
+  font-family: "DM Sans";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 500px;
+  font-size: 65px;
+  color: #72bf78;
+}
+
+/* What is Flowthink section */
+
+.info-section {
+  display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  background-color: red;
-}
-.middle .middle-title {
-  margin: 10px 0;
-  text-align: center;
-  padding-top: 150px;
+  width: 1200px;
+  height: 400px;
+  margin: -10px auto;
+  padding: 40px 20px;
+  border-radius: 50px;
+  background-color: #72bf78;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-.middle .middle-title .middle-title-font {
-  color: #002b5b;
-  font-size: 65px;
+.info-section .info-header {
+  position: absolute;
+  background-color: #ffeb85;
+  color: #385f38;
+  top: -35px;
+  left: -5px;
+  padding: 10px 20px;
+  width: 350px;
+  border-radius: 15px;
+  font-family: "DM Sans";
+  font-size: 30px;
   font-weight: bold;
+  display: inline-block;
+  margin-bottom: -10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-.middle .sub-header-title {
+.info-section .info-header .logo {
+  font-family: "futura";
+  font-size: 30px;
+  color: #385f38;
+}
+
+.info-section .info-paragraph {
+  font-family: "SourceCode";
+  text-align: center;
+  font-size: 25px;
+  margin: 20px auto;
+  color: #ffffff;
+}
+
+/* Option Section */
+
+.option-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: #d3d3d3; */
+  width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.option-section-header {
+  text-align: center;
+  margin-bottom: 20px;
+  width: 350px;
+  height: 100px;
+  background-color: black;
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px;
-  width: 500px;
-  margin-top: 95px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+  font-family: "SourceCodeBold";
+  font-size: 35px;
+  margin-bottom: 20px;
 }
 
-.middle .sub-header-title .sub-header-title-font {
-  font-size: 55px;
-  font-weight: bold;
-  color: #d3ee98;
+.option-section-arrow {
+  display: flex;
+  justify-content: space-between;
+  width: 550px;
+  height: 150px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  /* background-color: red; */
+}
+
+.option-section-choose {
+  display: flex;
+  justify-content: space-between;
+  width: 900px;
+
+  /* background-color: red; */
+}
+
+.choose-item {
+  text-align: center;
+}
+
+.option-box {
+  width: 300px;
+  height: 160px;
+  background-color: #72bf78;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  font-family: "SourceCodeBold";
+  font-size: 35px;
+  color: #ffffff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.p-option {
+  font-family: "SourceCodeBold";
+  text-align: center;
+  margin: 0;
+  /* padding: 10px; */
+  font-size: 30px;
+  color: #385f38;
 }
