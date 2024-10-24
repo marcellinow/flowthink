@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Futura";
+  src: url("assets/font/Futur.ttf");
+}
+@font-face {
+  font-family: "DM Sans";
+  src: url("assets/font/DMSans_18pt-Medium.ttf");
+}
+
+@font-face {
+  font-family: "SourceCode";
+  src: url("assets/font/SourceCodePro-Regular.ttf");
+}
+@font-face {
+  font-family: "SourceCodeBold";
+  src: url("assets/font/SourceCodePro-Bold.ttf");
+}
+
+body {
+  line-height: 1.6;
+  background-color: #fdfed4;
+  min-height: 240vh;
+  display: flex;
+  flex-direction: column;
+  background-image: url("assets/img/Background.svg");
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2 {
+  font-family: "DM Sans";
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #72bf78;
+  height: 80px;
+}
+
+.logo-restart {
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+nav .logo {
+  color: #ffffff;
+  font-size: 28px;
+  font-family: "Futura";
+}
+
+nav .nav-links {
+  list-style: none;
+  display: flex;
+}
+
+nav .nav-links li {
+  margin: 0 15px;
+}
+
+nav .nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  font-family: "DM Sans";
+}
+
+/* Main content */
+main {
+  flex: 1;
+  display: flex;
+  margin: 20px auto;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+}
+
+.video-container {
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 16 / 9;
+  background-color: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-container:hover {
+  transform: scale(1.05);
+}

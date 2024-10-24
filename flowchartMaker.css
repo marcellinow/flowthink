@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Futura";
+  src: url("assets/font/Futur.ttf");
+}
+@font-face {
+  font-family: "DM Sans";
+  src: url("assets/font/DMSans_18pt-Medium.ttf");
+}
+
+@font-face {
+  font-family: "SourceCode";
+  src: url("assets/font/SourceCodePro-Regular.ttf");
+}
+@font-face {
+  font-family: "SourceCodeBold";
+  src: url("assets/font/SourceCodePro-Bold.ttf");
+}
+a {
+  text-decoration: none;
+}
+h1 {
+  font-family: "DM Sans";
+}
+h2 {
+  font-family: "DM Sans";
+}
+
+body {
+  line-height: 1.6;
+  background-color: #fdfed4;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-image: url("assets/img/Background.svg");
+}
+.draggable {
+  cursor: move;
+}
+
+.canvas-item {
+  position: absolute;
+  user-select: none;
+}
+
+.canvas-item img {
+  pointer-events: none;
+}
+
+.canvas-item p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 3px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  text-align: center;
+}
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #72bf78;
+  height: 80px;
+}
+
+.logo-restart {
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+nav .logo {
+  color: #ffffff;
+  font-size: 28px;
+  font-family: "Futura";
+}
+
+nav .nav-links {
+  list-style: none;
+  display: flex;
+}
+
+nav .nav-links li {
+  margin: 0 15px;
+}
+
+nav .nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  font-family: "DM Sans";
+}
+
+/* Sidebar */
+.sidebar {
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 100px;
+
+  bottom: 100px;
+  border-radius: 25px;
+  height: 800px;
+  width: 250px;
+  background-color: #72bf78;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  z-index: 10;
+}
+.sidebar img {
+  margin: 10px 0;
+}
+
+/* Canvas */
+.canvas-container {
+  display: flex;
+  margin-top: 50px;
+  justify-content: right;
+}
+.canvas {
+  margin-left: 270px;
+  width: 1200px;
+  height: 145vh;
+  right: 20px;
+  background-color: white;
+  border: 2px solid #4a4a4a;
+  border-radius: 10px;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+/* Delete button */
+.delete-btn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  line-height: 1;
+  cursor: pointer;
+  display: none;
+}
+
+.canvas-item:hover .delete-btn {
+  display: block;
+}
+
+.text-input {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  text-align: center;
+  background: transparent;
+  border: none;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+}

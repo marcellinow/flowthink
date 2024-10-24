@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="flowchartMaker.css" rel="stylesheet" />
+    <link rel="icon" href="assets/img/plain-logo.svg" type="image/x-icon" />
+    <title>Flowthink</title>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav>
+      <a href="" class="logo-restart">
+        <div class="logo">flowthink</div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="landingPage.html">home</a></li>
+        <li><a href="flowchartMaker.html">start</a></li>
+        <li><a href="learn.html">learn</a></li>
+      </ul>
+    </nav>
+
+    <!-- Canvas -->
+    <div class="canvas-container">
+      <!-- Sidebar -->
+      <section id="sidebar" class="sidebar">
+        <img
+          src="assets/img/start-end.svg"
+          class="draggable start-end"
+          draggable="true"
+          data-type="start-end"
+          width="200"
+        />
+        <img
+          src="assets/img/action.svg"
+          class="draggable action"
+          draggable="true"
+          data-type="action"
+          width="150"
+        />
+        <img
+          src="assets/img/decision.svg"
+          class="draggable decision"
+          draggable="true"
+          data-type="decision"
+          width="150"
+        />
+        <img
+          src="assets/img/input-output.svg"
+          class="draggable input-output"
+          draggable="true"
+          data-type="input-output"
+          width="150"
+        />
+        <img
+          src="assets/img/document.svg"
+          class="draggable document"
+          draggable="true"
+          data-type="document"
+          width="150"
+        />
+        <img
+          src="assets/img/Vertical Line.svg"
+          class="draggable line"
+          draggable="true"
+          data-type="vertical-line"
+          width="6"
+        />
+        <img
+          src="assets/img/Horizontal Line.svg"
+          class="draggable line"
+          draggable="true"
+          data-type="horizontal-line"
+          height="6"
+        />
+      </section>
+
+      <!-- Canvas -->
+      <section id="canvas" class="canvas"></section>
+    </div>
+    <script src="flowchartMaker.js"></script>
+  </body>
+</html>
