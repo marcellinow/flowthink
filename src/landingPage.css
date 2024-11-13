@@ -6,20 +6,20 @@
 
 @font-face {
   font-family: "Futura";
-  src: url("assets/font/Futur.ttf");
+  src: url("../assets/font/Futur.ttf");
 }
 @font-face {
   font-family: "DM Sans";
-  src: url("assets/font/DMSans_18pt-Medium.ttf");
+  src: url("../assets/font/DMSans_18pt-Medium.ttf");
 }
 
 @font-face {
   font-family: "SourceCode";
-  src: url("assets/font/SourceCodePro-Regular.ttf");
+  src: url("../assets/font/SourceCodePro-Regular.ttf");
 }
 @font-face {
   font-family: "SourceCodeBold";
-  src: url("assets/font/SourceCodePro-Bold.ttf");
+  src: url("../assets/font/SourceCodePro-Bold.ttf");
 }
 a {
   text-decoration: none;
@@ -37,7 +37,7 @@ body {
   height: 240vh;
   justify-content: center;
   align-items: center;
-  background-image: url("assets/img/Background.svg");
+  background-image: url("../assets/img/Background.svg");
 }
 .p-middle {
   font-size: 35px;
