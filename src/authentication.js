@@ -74,6 +74,7 @@ async function signIn(email, password) {
     window.location.href = "landingPage.html";
   } catch (error) {
     console.error("Error when signing in: ", error.message);
+    alert(`Sign in failed: ${error.message}`);
   }
 }
 document
