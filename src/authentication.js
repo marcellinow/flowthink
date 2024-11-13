@@ -70,10 +70,21 @@ async function signIn(email, password) {
       password
     );
     console.log("Sign In (User): ", userCredential.user);
+
+    window.location.href = "landingPage.html";
   } catch (error) {
     console.error("Error when signing in: ", error.message);
   }
 }
+document
+  .getElementById("signin-form")
+  .addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const email = document.getElementById("signin-email").value;
+    const password = document.getElementById("signin-password").value;
+
+    await signIn(email, password);
+  });
 
 // Sign Out function
 async function logOut() {
