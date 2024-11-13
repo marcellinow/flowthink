@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Futura";
+  src: url("../assets/font/Futur.ttf");
+}
+@font-face {
+  font-family: "DM Sans";
+  src: url("../assets/font/DMSans_18pt-Medium.ttf");
+}
+
+@font-face {
+  font-family: "SourceCode";
+  src: url("../assets/font/SourceCodePro-Regular.ttf");
+}
+@font-face {
+  font-family: "SourceCodeBold";
+  src: url("../assets/font/SourceCodePro-Bold.ttf");
+}
+p {
+  font-family: "Futura";
+}
+a {
+  text-decoration: none;
+  /* color: #ffffff; */
+  /* font-weight: bold; */
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #f7f7f7;
+}
+
+h1 {
+  font-family: "Futura";
+}
+h2 {
+  font-family: "Futura";
+  color: white;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-image: url("../assets/img/Background.svg");
+}
+
+/* Authentication Part */
+
+.auth * {
+  margin: 13px;
+}
+.auth {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  height: 500px;
+  width: 450px;
+  border-radius: 20px;
+  background-color: #72bf78;
+  box-shadow: 0 4px 8px rgb(57, 77, 64);
+}
+.auth button:hover {
+  background-color: #72bf78;
+  color: #f7f7f7;
+}
+
+.auth input {
+  width: 90%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.2rem;
+  font-family: "DM Sans";
+}
+
+.auth button {
+  background-color: #f7f7f7;
+  color: #72bf78;
+  border: none;
+  width: 90%;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 8px rgb(57, 77, 64);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Sign Up and Sign In shown logic */
+#signup-section {
+  display: block; /* Show Sign Up by default */
+}
+
+#signin-section {
+  display: none; /* Hide Sign In by default */
+}
+
+/* Google Button */
+.auth #google-signup,
+.auth #google-signin {
+  background-color: #db4437; /* Google Red */
+  color: #fff;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.auth #google-signup:hover,
+.auth #google-signin:hover {
+  background-color: #adc221;
+}

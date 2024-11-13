@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     item.style.top = `${y}px`;
 
     const img = document.createElement("img");
-    img.src = `assets/img/${getImageFileName(type)}`;
+    img.src = `../assets/img/${getImageFileName(type)}`;
 
     if (type === "start-end") {
       img.width = 200;
