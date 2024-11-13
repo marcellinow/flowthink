@@ -1,6 +1,10 @@
-// Import auth and db from firebase.js
 import { auth, db } from "../firebase.js";
-import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut,
+} from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
 import {
   doc,
   setDoc,
@@ -72,7 +76,7 @@ async function signIn(email, password) {
 }
 
 // Sign Out function
-async function signOut() {
+async function logOut() {
   try {
     await signOut(auth);
     console.log("Signed Out");
