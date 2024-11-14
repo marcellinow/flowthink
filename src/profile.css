@@ -1,0 +1,228 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Futura";
+  src: url("../assets/font/Futur.ttf");
+}
+@font-face {
+  font-family: "DM Sans";
+  src: url("../assets/font/DMSans_18pt-Medium.ttf");
+}
+
+@font-face {
+  font-family: "SourceCode";
+  src: url("../assets/font/SourceCodePro-Regular.ttf");
+}
+@font-face {
+  font-family: "SourceCodeBold";
+  src: url("../assets/font/SourceCodePro-Bold.ttf");
+}
+a {
+  text-decoration: none;
+}
+h1 {
+  font-family: "DM Sans";
+  font-size: 5rem;
+}
+h2 {
+  font-family: "DM Sans";
+}
+h3 {
+  font-family: "DM Sans";
+}
+
+body {
+  line-height: 1.6;
+  background-color: #fdfed4;
+  height: 150vh;
+  background-image: url("../assets/img/Background.svg");
+  margin: 0; /* Remove default margin */
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center;
+}
+
+/* Main container styling */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Navigation */
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #72bf78;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.logo-restart {
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+nav .logo {
+  color: #ffffff;
+  font-size: 28px;
+  font-family: "Futura";
+}
+
+nav .nav-links {
+  list-style: none;
+  display: flex;
+}
+
+nav .nav-links li {
+  margin: 0 10px;
+}
+
+nav .nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  font-family: "DM Sans";
+}
+
+/* Profile Section */
+.profile {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  height: auto;
+  width: 900px;
+  border-radius: 20px;
+  background-color: #72bf78;
+  box-shadow: 0 4px 8px rgb(57, 77, 64);
+  text-align: center;
+  margin-top: 140px;
+}
+
+.profile img {
+  border-radius: 50%;
+  margin-bottom: 0;
+}
+.profile .profile-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.profile h3,
+.profile p {
+  color: #ffffff;
+  font-family: "DM Sans";
+  font-size: 1.2rem;
+}
+
+.profile button:hover {
+  background-color: #72bf78;
+  color: #f7f7f7;
+}
+
+.profile button {
+  background-color: #f7f7f7;
+  color: #72bf78;
+  border: none;
+  width: 90%;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 8px rgb(57, 77, 64);
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+/* Catalog Section */
+.catalog {
+  margin-top: 30px;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.catalog h3 {
+  font-family: "DM Sans", sans-serif;
+  font-size: 20px;
+  color: #2ac1ac;
+  margin-bottom: 15px;
+}
+
+.flowchart-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.flowchart-item {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 10px;
+  width: calc(33.33% - 20px); /* Membuat flowchart item tampil 3 per baris */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.flowchart-item h4 {
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  color: #333;
+  margin: 10px 0;
+}
+
+.flowchart-item p {
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.flowchart-item button {
+  background-color: #72bf78;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.flowchart-item button:hover {
+  background-color: #4a4a4a;
+}
+
+.delete-flowchart-btn {
+  background-color: #ff4c4c;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.delete-flowchart-btn:hover {
+  background-color: #d43f3f;
+}

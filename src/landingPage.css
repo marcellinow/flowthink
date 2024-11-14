@@ -34,7 +34,7 @@ h2 {
 body {
   line-height: 1.6;
   background-color: #fdfed4;
-  height: 240vh;
+  height: 180vh;
   justify-content: center;
   align-items: center;
   background-image: url("../assets/img/Background.svg");
@@ -72,7 +72,7 @@ nav .nav-links {
 }
 
 nav .nav-links li {
-  margin: 0 15px;
+  margin: 0 10px;
 }
 
 nav .nav-links li a {

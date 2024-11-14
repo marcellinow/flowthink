@@ -4,6 +4,8 @@ import {
   signInWithEmailAndPassword,
   onAuthStateChanged,
   signOut,
+  GoogleAuthProvider,
+  signInWithPopup,
 } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
 import {
   doc,
@@ -11,19 +13,33 @@ import {
 } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Toggle between Sign-Up and Sign-In sections
   document.getElementById("signin-link").addEventListener("click", () => {
-    // console.log("Sign In link clicked");
     document.getElementById("signup-section").style.display = "none";
     document.getElementById("signin-section").style.display = "block";
   });
 
   document.getElementById("signup-link").addEventListener("click", () => {
-    // console.log("Sign Up link clicked");
     document.getElementById("signin-section").style.display = "none";
     document.getElementById("signup-section").style.display = "block";
   });
 });
-// Sign Up button to stores the use data in
+
+// Function to display the user’s profile picture and name
+function displayUserInfo(user) {
+  const userPic = document.getElementById("user-pic");
+  const userName = document.getElementById("user-name");
+  const userInfo = document.getElementById("user-info");
+
+  // Update the profile picture and name with fallback options
+  userPic.src = user.photoURL || "../assets/img/default-profile-pic.svg";
+  userName.textContent = user.displayName || "User";
+
+  // Show the user info section
+  userInfo.style.display = "block";
+}
+
+// Sign-Up form submission handler
 document
   .getElementById("signup-form")
   .addEventListener("submit", async (event) => {
@@ -35,7 +51,7 @@ document
     await signUp(email, password, name);
   });
 
-// Sign Up function
+// Sign-Up function
 async function signUp(email, password, name) {
   try {
     const userCredential = await createUserWithEmailAndPassword(
@@ -45,15 +61,14 @@ async function signUp(email, password, name) {
     );
     const user = userCredential.user;
 
-    // Store additional user information in Firestore
     await setDoc(doc(db, "users", user.uid), {
       uid: user.uid,
       email: user.email,
       name: name,
+      photoURL: user.photoURL,
       createdAt: new Date(),
     });
 
-    console.log("User signed up and additional data saved:", user);
     alert("Sign up successful!");
   } catch (error) {
     console.error("Sign up failed:", error.message);
@@ -61,7 +76,7 @@ async function signUp(email, password, name) {
   }
 }
 
-// Sign In function
+// Sign-In function
 async function signIn(email, password) {
   try {
     const userCredential = await signInWithEmailAndPassword(
@@ -69,14 +84,14 @@ async function signIn(email, password) {
       email,
       password
     );
-    console.log("Sign In (User): ", userCredential.user);
-
     window.location.href = "landingPage.html";
   } catch (error) {
-    console.error("Error when signing in: ", error.message);
+    console.error("Error when signing in:", error.message);
     alert(`Sign in failed: ${error.message}`);
   }
 }
+
+// Sign-In form submission handler
 document
   .getElementById("signin-form")
   .addEventListener("submit", async (event) => {
@@ -87,19 +102,37 @@ document
     await signIn(email, password);
   });
 
-// Sign Out function
-async function logOut() {
+// Google Sign-In function
+async function signInGoogle() {
+  const provider = new GoogleAuthProvider();
   try {
-    await signOut(auth);
-    console.log("Signed Out");
+    const userCredential = await signInWithPopup(auth, provider);
+    const user = userCredential.user;
+
+    // Store or update user information in Firestore with Google profile data
+    await setDoc(doc(db, "users", user.uid), {
+      uid: user.uid,
+      email: user.email,
+      name: user.displayName,
+      photoURL: user.photoURL, // Save the Google profile picture URL
+      createdAt: new Date(),
+    });
+
+    // Display the user picture and name on successful Google Sign-In
+    displayUserInfo(user);
+
+    alert("Google Sign-In successful!");
+    window.location.href = "landingPage.html";
   } catch (error) {
-    console.error("Error when signing out: ", error.message);
+    console.error("Error when signing in with Google: ", error.message);
+    alert(`Google Sign-In failed: ${error.message}`);
   }
 }
 
-// Monitor State function
-function monitorAuthState(callback) {
-  onAuthStateChanged(auth, (user) => {
-    callback(user);
-  });
-}
+// Add event listeners for Google Sign-In buttons
+document
+  .getElementById("google-signup")
+  .addEventListener("click", signInGoogle);
+document
+  .getElementById("google-signin")
+  .addEventListener("click", signInGoogle);

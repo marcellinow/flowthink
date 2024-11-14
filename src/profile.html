@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="profile.css" rel="stylesheet" />
+    <link rel="icon" href="../assets/img/plain-logo.svg" type="image/x-icon" />
+    <title>Flowthink - Profile</title>
+  </head>
+  <body style="background-color: white">
+    <main>
+      <!-- Navigation Bar -->
+      <nav>
+        <a href="" class="logo-restart">
+          <div class="logo">flowthink</div>
+        </a>
+        <ul class="nav-links">
+          <li><a href="landingPage.html">home</a></li>
+          <li><a href="flowchartMaker.html">flowchart maker</a></li>
+          <li><a href="learn.html">learn</a></li>
+          <li><a href="profile.html">profile</a></li>
+        </ul>
+      </nav>
+
+      <!-- Profile Section -->
+      <section class="profile">
+        <h2 id="welcome-message" style="color: white">Welcome</h2>
+        <div class="profile-info">
+          <img
+            src="../assets/img/profile-pic.svg"
+            alt="profile-pic"
+            id="profile-pic"
+            height="200"
+          />
+          <div class="profile-details">
+            <h3 id="profile-name">Name</h3>
+            <p id="profile-email">Email</p>
+            <button id="signout-button">Sign Out</button>
+          </div>
+        </div>
+
+        <!-- Flowchart Catalog Section -->
+        <div class="catalog">
+          <h3>Your Flowchart Catalog</h3>
+          <div id="flowchart-list" class="flowchart-list"></div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="profile.js"></script>
+  </body>
+</html>

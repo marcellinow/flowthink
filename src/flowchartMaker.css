@@ -34,12 +34,14 @@ h2 {
 body {
   line-height: 1.6;
   background-color: #fdfed4;
-  height: 100vh;
+  height: 115vh;
   width: 100%;
   justify-content: center;
   align-items: center;
   background-image: url("../assets/img/Background.svg");
+  margin: 0;
 }
+
 .draggable {
   cursor: move;
 }
@@ -66,7 +68,7 @@ body {
   font-size: 14px;
   text-align: center;
 }
-/* Navigation */
+
 /* Navigation */
 nav {
   display: flex;
@@ -96,7 +98,7 @@ nav .nav-links {
 }
 
 nav .nav-links li {
-  margin: 0 15px;
+  margin: 0 10px;
 }
 
 nav .nav-links li a {
@@ -113,7 +115,6 @@ nav .nav-links li a {
   flex-direction: column;
   align-items: center;
   top: 0;
-
   bottom: 100px;
   border-radius: 25px;
   height: 800px;
@@ -122,29 +123,54 @@ nav .nav-links li a {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   padding: 20px;
   z-index: 10;
+  margin-right: 20px; /* Jarak antara sidebar dan canvas */
 }
 .sidebar img {
   margin: 10px 0;
 }
 
-/* Canvas */
+/* Canvas Container */
 .canvas-container {
   display: flex;
+  align-items: flex-start;
   margin-top: 50px;
-  justify-content: right;
+  gap: 20px;
+  position: relative;
 }
+
+/* Canvas */
 .canvas {
-  margin-left: 270px;
-  width: 1200px;
-  height: 145vh;
-  right: 20px;
+  flex-grow: 1;
+  width: 700px;
+  height: 85vh;
   background-color: white;
   border: 2px solid #4a4a4a;
   border-radius: 10px;
   position: relative;
-  margin-bottom: 50px;
 }
 
+/* Save Button */
+.save-flowchart {
+  height: 100px;
+  width: 200px;
+  position: absolute;
+  bottom: -60px;
+  right: 20px;
+  background-color: #72bf78;
+  color: white;
+  border-radius: 5px;
+  border-color: black;
+  padding: 10px 20px;
+  font-family: "Futura", sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 20px; /* Jarak tambahan di atas tombol */
+}
+.save-flowchart:hover {
+  background-color: #4a4a4a;
+  color: white;
+}
 /* Delete button */
 .delete-btn {
   position: absolute;
